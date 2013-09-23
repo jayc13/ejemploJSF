@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Ejemplo Persona</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <label>
+                Nombre:
+            </label>
+            <h:inputText id="nombre" value="#{aBMPersona.nombre}"/>
+            <h:commandButton value="Guardar" action="#{aBMPersona.guardar()}" />
+        </h:form>
+        
+        <h:inputText value="#{aBMPersona.cantidad}" disabled="true" />
+        
+        <h:dataTable value="#{aBMPersona.nombres}" var="nombre">
+            <h:column>
+                <f:facet name="header">Nombres:</f:facet>    				
+                #{nombre}
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>
+
